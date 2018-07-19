@@ -1,4 +1,5 @@
-// demo1 socpe
+//😄 scope ---------------------------------------- 😄
+// demo1 scope
 // {
 //     var yourName ="ke"
 //     let myName ='le';
@@ -8,6 +9,8 @@
 //demo2
 // {{{{{ let inside = 5} console.log(inside);}}}}
 
+
+//😄 let ---------------------------------------- 😄
 //demo3 
 // var a = [];
 // for (var i = 0; i < 8; i++) {
