@@ -1,9 +1,23 @@
-"use strict"
+// demo1 socpe
+// {
+//     var yourName ="ke"
+//     let myName ='le';
+// }
+// console.log(yourName);
 
-// var a  = "text1"
-// let b = "text2"
-// console.log(a)
-// console.log(b)
+//demo2
+// {{{{{ let inside = 5} console.log(inside);}}}}
+
+//demo3 
+// var a = [];
+// for (var i = 0; i < 8; i++) {
+//     a[i] = function () {
+//         console.log(i);
+//     }
+// }
+// a[1]();
+// console.dir(a);
+
 
 // function testVar() {
 //     var a = 30
@@ -24,14 +38,29 @@
 // }
 
 // testVar();
-
 // testLet()
 
-// for ( let i = 0; i < 10; i++) {
-//     console.log(i);
-// }
-//   console.log(i);
 
+//😄 const ---------------------------------------- 😄
+const PI = 3.1415;
+PI // 3.1415
+
+PI = 3;
+
+// TypeError: Assignment to constant variable.
+
+
+
+const foo;
+// SyntaxError: Missing initializer in const declaration
+
+
+
+if (true) {
+    const MAX = 5;
+}
+
+MAX // Uncaught ReferenceError: MAX is not defined
 
 
 const colors = [];
@@ -43,4 +72,8 @@ colors.push("blue");
 console.log(colors);
 
 
-colors = "red";
+colors = "red";  //ERROR
+
+const obj = {}
+obj.a = 2;
+obj= {};
