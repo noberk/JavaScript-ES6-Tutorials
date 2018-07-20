@@ -93,7 +93,7 @@ class Canvas {
 
         if (htmlElements) {
             for (const item of htmlElements) {
-                item.addEventListener(ele.eventType, (event) => {
+                item.addEventListener(ele.eventType, () => {
                     fetch('http://127.0.0.1:8080/salary.json')
                         .catch(error => {
                             console.log(error);
@@ -107,11 +107,19 @@ class Canvas {
                             this.addEventByTags({ elementType: 'button', eventType: 'click' });
 
                         }).catch(error => console.log(error))
+
+                    // let response = await fetch('http://127.0.0.1:8080/salary.json');
+                    // let data = await response.json()
+                    // this.template.createTableStrings(data);
+                    // this.update();
+                    // this.addEventByTags({ elementType: 'button', eventType: 'click' });
+
                 })
             }
         }
     }
 }
+
 
 Component({ styleUrls: ['./bootstrap/css/bootstrap.css'] })
 new Canvas('list', new Template);
