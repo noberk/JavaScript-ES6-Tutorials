@@ -1,4 +1,5 @@
-//创建
+
+//创建😄第一步
 const TABLEDATA = [
     { name: 'wang', age: 18, address: "nanjing" },
     { name: 'jg', age: 28, address: "nanjing" },
@@ -32,6 +33,7 @@ class Template {
         this.combine(tableContent)
 
     }
+
     createButton(val) {
         let button = `<button class="btn">${val}</button>`;
         this.combine(button);
@@ -59,31 +61,64 @@ const Component = (inventory) => {
 class Canvas {
     constructor(id, template) {
         this.template = template;
-        let box = this.findWrapper(id);
-        if (box) {
-            this.init(box);
+        this.findWrapper(id);
+        if (this.box)
+            this.init();
 
-        }
     }
     findWrapper(eleId) {
         if (eleId) {
-            let box = document.getElementById(eleId);
-            return box;
+            this.box = document.getElementById(eleId);
         } else
-            return undefined;
+            this.box = undefined;
+    }
+    update() {
+        this.box.innerHTML = this.template.HTML;
+    }
+    init() {
+        this.template.createTableStrings(TABLEDATA)
+
+        this.template.createButton`more`;
+        this.template.createButton`更新`;
+        this.template.createButton`更新1`;
+
+        this.update();
+
+        this.addEventByTags({ elementType: 'button', eventType: 'click' });
+
     }
 
-    init(box) {
-        this.template.createTableStrings(TABLEDATA)
-        this.template.createTableStrings(TABLEDATA2)
-        this.template.createButton`more`;
-        this.template.createButton`mores`;
-        this.template.createButton`mores`;
-        box.innerHTML = this.template.HTML;
+    addEventByTags(ele) {
+        let htmlElements = document.getElementsByTagName(ele.elementType);
+
+        if (htmlElements) {
+            for (const item of htmlElements) {
+                item.addEventListener(ele.eventType, (event) => {
+                    fetch('http://127.0.0.1:8080/tableData.json')
+                        .catch(error => {
+                            console.log(error);
+                        }).then(response => {
+                            return response.json()
+
+                        }).then(data => {
+
+                            this.template.createTableStrings(data);
+                            this.update();
+                            this.addEventByTags({ elementType: 'button', eventType: 'click' });
+
+                        }).catch(error => console.log(error))
+
+
+                })
+            }
+        }
+
+
+
     }
 
 
 }
 
-Component({styleUrls:['./bootstrap/css/bootstrap.css']})
+Component({ styleUrls: ['./bootstrap/css/bootstrap.css'] })
 new Canvas('list', new Template);
