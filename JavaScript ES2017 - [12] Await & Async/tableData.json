@@ -1,0 +1,6 @@
+[
+    { "name": "wang", "age": 18 ,"address":"nanjing"},
+    { "name": "jg", "age": 28 ,"address":"nanjing"},
+    { "name": "zbbx", "age": 38,"address":"nanjing" },
+    { "name": "rw", "age": 18,"address":"nanjing" }
+]
