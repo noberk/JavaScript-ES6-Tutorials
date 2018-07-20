@@ -1,6 +1,12 @@
 [
-    { "name": "wang", "age": 18 ,"address":"无法"},
-    { "name": "jg", "age": 28 ,"address":"阿瑟东"},
-    { "name": "zbbx", "age": 38,"address":"包括" },
-    { "name": "rw", "age": 18,"address":"天津" }
+    { "name": "wang", "age": 18 ,"address":"无法","package":50},
+    { "name": "jg", "age": 28 ,"address":"阿瑟东","package":50},
+    { "name": "zbbx", "age": 38,"address":"包括","package":50 },
+    { "name": "rw", "age": 18,"address":"天津","package":50 },
+    { "name": "陶俊", "age": 18,"address":"纵波","package":50 },
+    { "name": "wang", "age": 18 ,"address":"无法","package":50},
+    { "name": "jg", "age": 28 ,"address":"阿瑟东","package":50},
+    { "name": "zbbx", "age": 38,"address":"包括","package":50 },
+    { "name": "rw", "age": 18,"address":"天津","package":50 },
+    { "name": "陶俊", "age": 18,"address":"纵波","package":50 }
 ]

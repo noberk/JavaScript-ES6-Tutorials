@@ -79,8 +79,8 @@ class Canvas {
         this.template.createTableStrings(TABLEDATA)
 
         this.template.createButton`more`;
-        this.template.createButton`更新`;
-        this.template.createButton`更新1`;
+        this.template.createButton`get data`;
+        this.template.createButton`get more data`;
 
         this.update();
 
@@ -94,7 +94,7 @@ class Canvas {
         if (htmlElements) {
             for (const item of htmlElements) {
                 item.addEventListener(ele.eventType, (event) => {
-                    fetch('http://127.0.0.1:8080/tableData.json')
+                    fetch('http://127.0.0.1:8080/salary.json')
                         .catch(error => {
                             console.log(error);
                         }).then(response => {
@@ -107,17 +107,10 @@ class Canvas {
                             this.addEventByTags({ elementType: 'button', eventType: 'click' });
 
                         }).catch(error => console.log(error))
-
-
                 })
             }
         }
-
-
-
     }
-
-
 }
 
 Component({ styleUrls: ['./bootstrap/css/bootstrap.css'] })
